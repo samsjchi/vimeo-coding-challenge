@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoList from '../VideoList/VideoList';
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
     fetch('http://vimeo.com/api/v2/channel/staffpicks/videos.json') // Using Fetch API
       .then(res => res.json())
       .then(videos => {
-        console.log('videos from parsed Fetch API response:', videos);
+        // console.log('videos from parsed Fetch API response:', videos);
         this.setState({ videos });
       });
   }
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Vimeo Coding Challenge
+        <VideoPlayer video={this.state.videos[0]} />
         <VideoList videos={this.state.videos} />
       </div>
     );
