@@ -2,6 +2,10 @@
   margin-right: 20px;
   flex: 2;
 }
+
+/*============================================================================
+  VIDEO CONTENT
+==============================================================================*/
 .video-content {
   background-color: #282828;
   opacity: 0.8;
@@ -19,6 +23,30 @@
   font-weight: 500;
   letter-spacing: 1px;
   padding-bottom: 15px;
+}
+.video-info__user-icon img {
+  border-radius: 100%;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+}
+.video-info__user-info {
+  display: inline-block;
+  padding: 15px;
+  color: #ffffff;
+}
+.video-info__username {
+  padding-bottom: 7px;
+}
+.video-info__user-info span {
+  font-family: Garamond;
+  font-style: italic;
+  font-size: 18px;
+  color: #a0a0a0;
+}
+.video-info__stats {
+  display: inline-block;
+  float: right;
 }
 .video-description {
   color: #a0a0a0;
