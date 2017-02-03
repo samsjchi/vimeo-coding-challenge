@@ -27,4 +27,7 @@
 }
 .video-list__list-items {
   padding-left: 0;
+  height: 1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

@@ -18,7 +18,7 @@ const VideoList = (props) => {
           ------------------------ &nbsp;Latest Picks&nbsp; ------------------------
         </div>
         <div className="video-list__header-sub">
-          what we're loving right now
+          what we're watching right now
         </div>
       </div>
       <ul className="video-list__list-items">

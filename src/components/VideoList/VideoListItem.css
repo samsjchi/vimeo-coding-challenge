@@ -72,6 +72,24 @@
   font-style: italic;
   font-size: 16px;
 }
+
+/*============================================================================
+  VIDEO LIST ITEM STATS
+==============================================================================*/
 .video-list-item__stats {
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 11px;
+}
+.video-list-item__stats-plays,
+.video-list-item__stats-likes,
+.video-list-item__stats-comments {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.video-list-item__stats .fa-icon {
+  color: #a0a0a0;
+  font-size: 13px;
+  opacity: 0.85;
 }
