@@ -27,11 +27,11 @@
 .video-list-item {
   display: flex;
   color: #a0a0a0;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .video-list-item img {
-  max-width: 170px;
+  max-width: 155px;
 }
 .video-list-item:first-child {
   margin-top: 0;
@@ -46,7 +46,7 @@
   flex: 1;
   align-self: center;
   float: right;
-  max-width: 60%;
+  max-width: 70%;
   padding-left: 15px;
 }
 .video-list-item__title {
@@ -64,7 +64,7 @@
   color: #ffffff;
   font-size: 14px;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .video-list-item__username span {
   color: #a0a0a0;
@@ -86,7 +86,7 @@
   position: relative;
   display: inline-block;
   font-size: 12px;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 .video-list-item__stats .fa-icon {
   color: #a0a0a0;

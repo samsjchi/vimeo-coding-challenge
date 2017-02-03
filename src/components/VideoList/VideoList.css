@@ -14,20 +14,32 @@
   font-size: 16px;
   text-transform: uppercase;
   color: #ffffff;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding: 20px 10px 15px 10px;
+  display: flex;
+  justify-content: center;
+}
+.video-list__header-main span {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .video-list__header-sub {
   font-family: Garamond;
   font-style: italic;
   font-size: 20px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   color: #ffffff;
   padding-bottom: 10px;
 }
 .video-list__list-items {
-  padding-left: 0;
   height: 1000px;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+.divider {
+  width: 100px;
+  height: 0;
+  border-top: 1px dotted #ffffff;
+  font-size: 0;
+  justify-content: center;
+  margin-top: 8px;
 }
