@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.header__logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+}
+.header__logo img {
+  width: 90px;
+}
+.header__badge img {
+  margin-top: 55px;
+  width: 80px;
+}
