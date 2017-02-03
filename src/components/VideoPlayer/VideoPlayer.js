@@ -4,7 +4,6 @@ import './VideoPlayer.css';
 import linkifyHtml from 'linkifyjs/html';
 
 const VideoPlayer = ({video}) => {
-  // console.log('video in VideoPlayer:', video);
   if(!video) return <div>Loading...</div>;
 
   const videoId = video.id;

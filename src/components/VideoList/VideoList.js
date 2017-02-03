@@ -4,7 +4,6 @@ import './VideoList.css';
 import VideoListItem from './VideoListItem';
 
 const VideoList = (props) => {
-  // console.log('videos in VideoList:', props.videos);
   const videoListItems = props.videos.map((video) => {
     return <VideoListItem
       key={video.id}

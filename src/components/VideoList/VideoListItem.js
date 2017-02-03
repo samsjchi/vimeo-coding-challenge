@@ -2,7 +2,6 @@ import React from 'react';
 import './VideoListItem.css';
 
 const VideoListItem = ({video, onVideoSelect}) => {
-  // console.log('video in VideoListItem:', video);
   const truncateUsername = (username) => {
     return (username.length > 12) ? username.slice(0, 12) + '...' : username;
   }
