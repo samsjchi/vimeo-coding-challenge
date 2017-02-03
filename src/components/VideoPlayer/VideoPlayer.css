@@ -78,3 +78,54 @@
 .video-description {
   color: #a0a0a0;
 }
+
+/*============================================================================
+  VIDEO STATS
+==============================================================================*/
+.video-info__stats {
+  display: inline-block;
+  float: right;
+  color: #ffffff;
+}
+.video-info__stats-plays,
+.video-info__stats-likes,
+.video-info__stats-comments {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 14px;
+}
+.fa-icon {
+  color: #a0a0a0;
+  opacity: 0.85;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.fa-icon-play {
+  margin-right: 0;
+}
+.fa-icon-heart a,
+.fa-icon-comment a {
+  color: #a0a0a0;
+  text-decoration: none;
+}
+.fa-icon-heart a:hover,
+.fa-icon-heart a:before {
+  color: #ff2450;
+  cursor: pointer;
+}
+.fa-icon-heart a:hover:before {
+  visibility: hidden;
+}
+.fa-icon-comment {
+  font-size: 20px;
+}
+.fa-icon-comment a:hover,
+.fa-icon-comment a:before {
+  color: #24ff70;
+  cursor: pointer;
+}
+.fa-icon-comment a:hover:before {
+  visibility: hidden;
+}

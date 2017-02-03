@@ -1,7 +1,11 @@
 import React from 'react';
 import './VideoPlayer.css';
 
+// Third party libraries & plugins
 import linkifyHtml from 'linkifyjs/html';
+import FaPlay from 'react-icons/lib/fa/play';
+import FaHeart from 'react-icons/lib/fa/heart';
+import FaComment from 'react-icons/lib/fa/comment';
 
 const VideoPlayer = ({video}) => {
   if(!video) return <div>Loading...</div>;
@@ -9,9 +13,10 @@ const VideoPlayer = ({video}) => {
   const videoId = video.id;
   const videoUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
 
-  // Parses video upload date to user-friendly format
+  // Prettify video upload date to display in user-friendly format
   const uploadDate = new Date(video.upload_date);
   const dateString = uploadDate.toLocaleString('en-us', { month: "short" }) + '. ' + uploadDate.getDate() + ', ' + uploadDate.getFullYear();
+
   // Parses video description to recognize links
   const linkifiedDescription = linkifyHtml(video.description);
 
@@ -31,7 +36,17 @@ const VideoPlayer = ({video}) => {
             <div className="video-info__upload-date"><span>published on</span> &nbsp;{dateString}</div>
           </div>
           <div className="video-info__stats">
-            {video.stats_number_of_plays} plays | {video.stats_number_of_likes} likes | {video.stats_number_of_comments} comments
+            <div className="video-info__stats-plays">
+              <span className="fa-icon fa-icon-play"><FaPlay /></span> {video.stats_number_of_plays} plays
+            </div>
+            <div className="video-info__stats-likes">
+              <span className="fa-icon fa-icon-heart"><FaHeart /></span>
+              {video.stats_number_of_likes} likes
+            </div>
+            <div className="video-info__stats-comments">
+              <span className="fa-icon fa-icon-comment"><FaComment /></span>
+              {video.stats_number_of_comments} comments
+            </div>
           </div>
         </div>
         <div className="video-description" dangerouslySetInnerHTML={{__html: linkifiedDescription}}>
