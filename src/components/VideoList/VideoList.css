@@ -1,0 +1,7 @@
+.video-list {
+  flex: 1;
+  max-width: 450px;
+  height: 100%;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}

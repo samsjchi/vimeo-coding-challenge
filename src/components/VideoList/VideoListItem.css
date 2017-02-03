@@ -1,0 +1,28 @@
+.video-list-item-wrapper {
+  position: relative;
+  display: block;
+  padding: 15px;
+  background-color: #282828;
+  cursor: pointer;
+}
+.video-list-item-wrapper:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.video-list-item-wrapper:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.video-list-item-wrapper:hover {
+  background-color: #383838;
+}
+.video-list-item {
+  display: flex;
+  color: #a0a0a0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.video-list-item img {
+  max-width: 170px;
+}
