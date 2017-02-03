@@ -1,11 +1,17 @@
 import React from 'react';
 import './VideoList.css';
 
+import VideoListItem from './VideoListItem';
+
 const VideoList = (props) => {
+  const videoListItems = props.videos.map((video) => {
+    return <VideoListItem key={video.id} video={video} />
+  });
+
   return (
     <div className="video-list">
       <ul className="video-list__list-items">
-        Number of videos returned from Vimeo API: {props.videos.length}
+        {videoListItems}
       </ul>
     </div>
   );
