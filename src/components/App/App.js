@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   getVimeoVideos() {
-    fetch('http://vimeo.com/api/v2/channel/staffpicks/videos.json') // Using Fetch API
+    fetch('https://vimeo.com/api/v2/channel/staffpicks/videos.json') // Using Fetch API
       .then(res => res.json())
       .then(videos => {
         this.setState({
