@@ -8,6 +8,10 @@ const VideoPlayer = ({video}) => {
   const videoId = video.id;
   const videoUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
 
+  // Parses video upload date to user-friendly format
+  const uploadDate = new Date(video.upload_date);
+  const dateString = uploadDate.toLocaleString('en-us', { month: "short" }) + '. ' + uploadDate.getDate() + ', ' + uploadDate.getFullYear();
+
   return (
     <div className="video-main">
       <div className="video-player">
@@ -21,7 +25,7 @@ const VideoPlayer = ({video}) => {
           </div>
           <div className="video-info__user-info">
             <div className="video-info__username">from {video.user_name}</div>
-            <div className="video-info__upload-date">published on {video.upload_date}</div>
+            <div className="video-info__upload-date">published on {dateString}</div>
           </div>
           <div className="video-info__stats">
             {video.stats_number_of_plays} plays | {video.stats_number_of_likes} likes | {video.stats_number_of_comments} comments
