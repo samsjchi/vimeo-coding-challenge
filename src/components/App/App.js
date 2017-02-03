@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: []
+      videos: [],
+      currentVideo: null
     };
   }
 
@@ -21,14 +22,17 @@ class App extends Component {
       .then(res => res.json())
       .then(videos => {
         // console.log('videos from parsed Fetch API response:', videos);
-        this.setState({ videos });
+        this.setState({
+          videos: videos,
+          currentVideo: videos[0]
+        });
       });
   }
 
   render() {
     return (
       <div className="App">
-        <VideoPlayer video={this.state.videos[0]} />
+        <VideoPlayer video={this.state.currentVideo} />
         <VideoList videos={this.state.videos} />
       </div>
     );
