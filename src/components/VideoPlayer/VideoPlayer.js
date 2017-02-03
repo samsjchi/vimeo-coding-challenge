@@ -49,11 +49,11 @@ const VideoPlayer = ({video}) => {
               <span className="fa-icon fa-icon-play"><FaPlay /></span> {prettyPlayCount} plays
             </div>
             <div className="video-info__stats-likes">
-              <span className="fa-icon fa-icon-heart"><FaHeart /></span>
+              <span className="fa-icon fa-icon-heart"><a href={likesUrl}><FaHeart /></a></span>
               {prettyLikeCount} likes
             </div>
             <div className="video-info__stats-comments">
-              <span className="fa-icon fa-icon-comment"><FaComment /></span>
+              <span className="fa-icon fa-icon-comment"><a href={commentsUrl}><FaComment /></a></span>
               {prettyCommentCount} comments
             </div>
           </div>
