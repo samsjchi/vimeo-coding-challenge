@@ -1,10 +1,10 @@
 import React from 'react';
 import './VideoListItem.css';
 
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
   // console.log('video in VideoListItem:', video);
   return (
-    <li className="video-list-item-wrapper">
+    <li className="video-list-item-wrapper" onClick={() => onVideoSelect(video)}>
       <div className="video-list-item">
         <div className="video-list-item__thumbnail">
           <img src={video.thumbnail_large} alt={video.title} />

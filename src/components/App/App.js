@@ -33,7 +33,9 @@ class App extends Component {
     return (
       <div className="App">
         <VideoPlayer video={this.state.currentVideo} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({currentVideo: selectedVideo})}
+          videos={this.state.videos} />
       </div>
     );
   }
