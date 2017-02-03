@@ -99,3 +99,50 @@ a:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+}
+footer p {
+  color: #ffffff;
+  font-family: Garamond;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+footer p span {
+  color: #ff2450;
+  font-family: Garamond;
+  font-style: italic;
+  font-style: normal;
+}
+.view-github-btn {
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  border: 1px solid #ffffff;
+  border-radius: 300px;
+  display: inline-block;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.4s;
+  transition-property: box-shadow, transform;
+}
+.view-github-btn:hover,
+.view-github-btn:focus,
+.view-github-btn:active {
+  color: #ffffff;
+  background-color: #fdcc52;
+  border-color: #fdcc52;
+  transform: scale(1.15);
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+a.view-github-btn:hover:before {
+  visibility: hidden;
+}
