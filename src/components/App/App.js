@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Header from '../Header/Header';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoList from '../VideoList/VideoList';
 
@@ -32,6 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <VideoPlayer video={this.state.currentVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({currentVideo: selectedVideo})}

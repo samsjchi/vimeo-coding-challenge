@@ -1,6 +1,8 @@
 import React from 'react';
 import './VideoPlayer.css';
 
+import linkifyHtml from 'linkifyjs/html';
+
 const VideoPlayer = ({video}) => {
   // console.log('video in VideoPlayer:', video);
   if(!video) return <div>Loading...</div>;
@@ -11,6 +13,8 @@ const VideoPlayer = ({video}) => {
   // Parses video upload date to user-friendly format
   const uploadDate = new Date(video.upload_date);
   const dateString = uploadDate.toLocaleString('en-us', { month: "short" }) + '. ' + uploadDate.getDate() + ', ' + uploadDate.getFullYear();
+  // Parses video description to recognize links
+  const linkifiedDescription = linkifyHtml(video.description);
 
   return (
     <div className="video-main">
@@ -24,15 +28,14 @@ const VideoPlayer = ({video}) => {
             <a href={video.user_url}><img src={video.user_portrait_medium} alt={video.user_url}></img></a>
           </div>
           <div className="video-info__user-info">
-            <div className="video-info__username">from {video.user_name}</div>
-            <div className="video-info__upload-date">published on {dateString}</div>
+            <div className="video-info__username"><span>from</span> &nbsp; <a href={video.user_url}>{video.user_name}</a></div>
+            <div className="video-info__upload-date"><span>published on</span> &nbsp;{dateString}</div>
           </div>
           <div className="video-info__stats">
             {video.stats_number_of_plays} plays | {video.stats_number_of_likes} likes | {video.stats_number_of_comments} comments
           </div>
         </div>
-        <div className="video-description">
-          {video.description}
+        <div className="video-description" dangerouslySetInnerHTML={{__html: linkifiedDescription}}>
         </div>
       </div>
     </div>
