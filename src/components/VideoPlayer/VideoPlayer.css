@@ -105,27 +105,15 @@
 .fa-icon-play {
   margin-right: 0;
 }
-.fa-icon-heart a,
-.fa-icon-comment a {
-  color: #a0a0a0;
-  text-decoration: none;
-}
-.fa-icon-heart a:hover,
-.fa-icon-heart a:before {
-  color: #ff2450;
-  cursor: pointer;
-}
-.fa-icon-heart a:hover:before {
-  visibility: hidden;
-}
 .fa-icon-comment {
   font-size: 20px;
 }
-.fa-icon-comment a:hover,
-.fa-icon-comment a:before {
-  color: #24ff70;
-  cursor: pointer;
+.video-info__stats-likes a:hover span {
+  color: #ff2450;
 }
-.fa-icon-comment a:hover:before {
-  visibility: hidden;
+.video-info__stats-comments a:hover span {
+  color: #24ff70;
+}
+.stats-count {
+  color: #ffffff !important;
 }

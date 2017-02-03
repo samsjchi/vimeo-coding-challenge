@@ -31,10 +31,15 @@ const VideoPlayer = ({video}) => {
 
   return (
     <div className="video-main">
+      {/* ================ Video Player ================ */}
       <div className="video-player embed-responsive embed-responsive-16by9">
         <iframe src={videoUrl} width="640" height="360" frameBorder="0" allowFullScreen></iframe>
       </div>
+
+      {/* ================ Video Content ================ */}
       <div className="video-content">
+
+        {/* ----- Video/User Info ----- */}
         <div className="video-info">
           <h1 className="video-info__title">{video.title}</h1>
           <div className="video-info__user-icon">
@@ -44,20 +49,41 @@ const VideoPlayer = ({video}) => {
             <div className="video-info__username"><span>from</span> &nbsp; <a href={video.user_url}>{video.user_name}</a></div>
             <div className="video-info__upload-date"><span>published on</span> &nbsp;{dateString}</div>
           </div>
+
+          {/* ----- Video Stats ----- */}
           <div className="video-info__stats">
             <div className="video-info__stats-plays">
-              <span className="fa-icon fa-icon-play"><FaPlay /></span> {prettyPlayCount} plays
+              <span className="fa-icon fa-icon-play">
+                <FaPlay />
+              </span>
+              <span className="stats-count">
+                {prettyPlayCount} plays
+              </span>
             </div>
             <div className="video-info__stats-likes">
-              <span className="fa-icon fa-icon-heart"><a href={likesUrl}><FaHeart /></a></span>
-              {prettyLikeCount} likes
+              <a href={likesUrl}>
+                <span className="fa-icon fa-icon-heart">
+                  <FaHeart />
+                </span>
+                <span className="stats-count">
+                  {prettyLikeCount} likes
+                </span>
+              </a>
             </div>
             <div className="video-info__stats-comments">
-              <span className="fa-icon fa-icon-comment"><a href={commentsUrl}><FaComment /></a></span>
-              {prettyCommentCount} comments
+              <a href={commentsUrl}>
+                <span className="fa-icon fa-icon-comment">
+                  <FaComment />
+                </span>
+                <span className="stats-count">
+                  {prettyCommentCount} comments
+                </span>
+              </a>
             </div>
           </div>
         </div>
+
+        {/* ----- Video Description ----- */}
         <div className="video-description" dangerouslySetInnerHTML={{__html: linkifiedDescription}}>
         </div>
       </div>
