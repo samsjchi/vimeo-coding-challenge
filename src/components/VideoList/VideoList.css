@@ -5,3 +5,26 @@
   margin-bottom: 20px;
   opacity: 0.8;
 }
+.video-list__header {
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+.video-list__header-main {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.video-list__header-sub {
+  font-family: Garamond;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  padding-bottom: 10px;
+}
+.video-list__list-items {
+  padding-left: 0;
+}

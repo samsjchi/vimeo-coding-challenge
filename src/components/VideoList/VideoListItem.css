@@ -1,3 +1,6 @@
+/*============================================================================
+  VIDEO LIST ITEM WRAPPER
+==============================================================================*/
 .video-list-item-wrapper {
   position: relative;
   display: block;
@@ -17,6 +20,10 @@
 .video-list-item-wrapper:hover {
   background-color: #383838;
 }
+
+/*============================================================================
+  VIDEO LIST ITEM
+==============================================================================*/
 .video-list-item {
   display: flex;
   color: #a0a0a0;
@@ -25,4 +32,20 @@
 }
 .video-list-item img {
   max-width: 170px;
+}
+.video-list-item:first-child {
+  margin-top: 0;
+}
+.video-list-item__thumbnail {
+  flex-basis: 45%;
+  flex-shrink: 0;
+  align-self: center;
+  position: relative;
+}
+.video-list-item__info {
+  flex: 1;
+  align-self: center;
+  float: right;
+  max-width: 60%;
+  padding-left: 15px;
 }

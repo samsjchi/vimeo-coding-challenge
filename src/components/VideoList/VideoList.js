@@ -15,7 +15,12 @@ const VideoList = (props) => {
   return (
     <div className="video-list">
       <div className="video-list__header">
-        Latest Picks
+        <div className="video-list__header-main">
+          ------------------------ &nbsp;Latest Picks&nbsp; ------------------------
+        </div>
+        <div className="video-list__header-sub">
+          what we're loving right now
+        </div>
       </div>
       <ul className="video-list__list-items">
         {videoListItems}
