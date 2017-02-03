@@ -2,6 +2,7 @@ import React from 'react';
 import './VideoPlayer.css';
 
 // Third party libraries & plugins
+import numeral from 'numeral';
 import linkifyHtml from 'linkifyjs/html';
 import FaPlay from 'react-icons/lib/fa/play';
 import FaHeart from 'react-icons/lib/fa/heart';
@@ -16,6 +17,14 @@ const VideoPlayer = ({video}) => {
   // Prettify video upload date to display in user-friendly format
   const uploadDate = new Date(video.upload_date);
   const dateString = uploadDate.toLocaleString('en-us', { month: "short" }) + '. ' + uploadDate.getDate() + ', ' + uploadDate.getFullYear();
+
+  // Prettify video stats to display in user-friendly format
+  const getPrettyPlayCount = (count) => (count < 1000) ? numeral(count).format('0,0') : numeral(count).format('0.0a');
+  const prettyPlayCount = getPrettyPlayCount(video.stats_number_of_plays);
+  const prettyLikeCount = numeral(video.stats_number_of_likes).format('0,0');
+  const prettyCommentCount = numeral(video.stats_number_of_comments).format('0,0');
+  const likesUrl = video.url + '/likes';
+  const commentsUrl = `https://vimeo.com/channels/staffpicks/${videoId}#comments`;
 
   // Parses video description to recognize links
   const linkifiedDescription = linkifyHtml(video.description);
@@ -37,15 +46,15 @@ const VideoPlayer = ({video}) => {
           </div>
           <div className="video-info__stats">
             <div className="video-info__stats-plays">
-              <span className="fa-icon fa-icon-play"><FaPlay /></span> {video.stats_number_of_plays} plays
+              <span className="fa-icon fa-icon-play"><FaPlay /></span> {prettyPlayCount} plays
             </div>
             <div className="video-info__stats-likes">
               <span className="fa-icon fa-icon-heart"><FaHeart /></span>
-              {video.stats_number_of_likes} likes
+              {prettyLikeCount} likes
             </div>
             <div className="video-info__stats-comments">
               <span className="fa-icon fa-icon-comment"><FaComment /></span>
-              {video.stats_number_of_comments} comments
+              {prettyCommentCount} comments
             </div>
           </div>
         </div>

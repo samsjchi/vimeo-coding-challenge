@@ -2,15 +2,21 @@ import React from 'react';
 import './VideoListItem.css';
 
 // Third party libraries & plugins
+import numeral from 'numeral';
 import FaPlay from 'react-icons/lib/fa/play';
 import FaHeart from 'react-icons/lib/fa/heart';
 import FaComment from 'react-icons/lib/fa/comment';
 
 const VideoListItem = ({video, onVideoSelect}) => {
-  const truncateUsername = (username) => {
-    return (username.length > 12) ? username.slice(0, 12) + '...' : username;
-  }
+  // Truncate username to stay on one line
+  const truncateUsername = (username) => (username.length > 12) ? username.slice(0, 12) + '...' : username;
   const truncatedUsername = truncateUsername(video.user_name);
+
+  // Prettify video stats to display in user-friendly format
+  const getPrettyPlayCount = (count) => (count < 1000) ? numeral(count).format('0,0') : numeral(count).format('0.0a');
+  const prettyPlayCount = getPrettyPlayCount(video.stats_number_of_plays);
+  const prettyLikeCount = numeral(video.stats_number_of_likes).format('0,0');
+  const prettyCommentCount = numeral(video.stats_number_of_comments).format('0,0');
 
   return (
     <li className="video-list-item-wrapper" onClick={() => onVideoSelect(video)}>
@@ -24,15 +30,15 @@ const VideoListItem = ({video, onVideoSelect}) => {
           <div className="video-list-item__stats">
             <div className="video-list-item__stats-plays">
               <span className="fa-icon fa-icon-play"><FaPlay /> </span>
-              {video.stats_number_of_plays}
+              {prettyPlayCount}
             </div>
             <div className="video-list-item__stats-likes">
               <span className="fa-icon fa-icon-heart"><FaHeart /></span>
-              {video.stats_number_of_likes}
+              {prettyLikeCount}
             </div>
             <div className="video-list-item__stats-comments">
               <span className="fa-icon fa-icon-comment"><FaComment /></span>
-              {video.stats_number_of_comments}
+              {prettyCommentCount}
             </div>
           </div>
         </div>
