@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import VideoList from '../VideoList/VideoList';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         Vimeo Coding Challenge
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
