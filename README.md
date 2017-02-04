@@ -1,5 +1,7 @@
 # Vimeo Front-End Coding Challenge
-Using the [Vimeo Developer API](https://developer.vimeo.com/), this simple React application fetches videos from Vimeo's "Staff Picks" channel in a clean and familiar web player interface, not unlike a darker cousin of Vimeo's current UI. The overall effect is one where the most important element--the content--jumps off the page.
+Using the [Vimeo Developer API](https://developer.vimeo.com/), this simple React application fetches videos from Vimeo's "Staff Picks" channel in a clean and familiar web video player interface, not unlike a darker cousin of Vimeo's current UI.
+
+I went through several iterations of color/typography combinations before settling on the flat, dark aesthetic. Despite the starkness of the UI elements, the clean and rounded typeface (Proxima Nova), the blurring of the abstract background image, and slightly transparent components make the page feel more warm and inviting. The overall effect is one that puts the focus on the most important element--the content--and makes it jump off the page.
 
 Check it out here:  https://vimeostaffspicks.herokuapp.com/
 
@@ -16,7 +18,7 @@ Run the app in development mode on your local server:
 ```
 $ npm start
 ```
-Open the app in your web browser by visiting: https://localhost:3000.
+Open the app in your web browser by visiting: [http://localhost:3000](http://localhost:3000).
 
 ## Application Structure
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -83,7 +85,7 @@ Thanks to its virtual DOM, React quickly determines the minimal changes needed (
 
 >How would the system scale for more users/visitors?
 
-As the number of users goes up, the primary bottleneck for this application is the data fetching from Vimeo's API, which limits the number of calls per hour. This can be combated by caching the JSON response data locally so that each page can load from the cache where possible and API calls are only made for new data. In addition, if this app included a search feature like most video applications do, for example, I would implement some sort of throttling/debouncing to limit the number of calls.
+As the number of users goes up, the primary bottleneck for this application is the data fetching from Vimeo's API, which limits the number of calls per hour. This can be combated by caching the JSON response data locally so that each page can load from the cache where possible and API calls are only made for new data. In addition, if this app included a search feature, for example, like most video applications do, I would implement some sort of throttling/debouncing to limit the number of calls.
 
 >How would your solution cope if the API was slow or broke or returned incorrect data?
 
